@@ -1,18 +1,22 @@
 /*
- * Option 1
+ * Option 1 - My First Resolution
  */
 
 const addBorderMy = (picture: string[]): string[] => {
-	let border = '*****';
+	let wall = '*'.repeat(picture[0].length + 2); /*?*/
 
 	let canvas = picture.map(x => `*${x}*`);
-	canvas.unshift(border);
-	canvas.push(border);
+	canvas.unshift(wall);
+	canvas.push(wall);
 
 	return canvas;
 };
 
 console.log(addBorderMy(['abc', 'ded'])); /*?.*/
+
+/*
+ * Option 2 - Instructor Resolution
+ */
 
 const addBorderInstructor = (picture: string[]): any => {
 	let wall = '*'.repeat(picture[0].length + 2); /*?*/
@@ -28,3 +32,19 @@ const addBorderInstructor = (picture: string[]): any => {
 };
 
 console.log(addBorderInstructor(['abc', 'ded'])); /*?.*/
+
+/*
+ * Option 2 - Functional Approach
+ */
+
+const wall = (chars: string[]): string => '*'.repeat(chars[0].length + 2);
+
+const addBorderFunctional = (picture: string[]): string[] => {
+	let canvas = picture.map(x => `*${x}*`); /*?*/
+	canvas.unshift(wall(picture));
+	canvas.push(wall(picture));
+
+	return canvas;
+};
+
+console.log(addBorderFunctional(['abc', 'ded'])); /*?.*/
