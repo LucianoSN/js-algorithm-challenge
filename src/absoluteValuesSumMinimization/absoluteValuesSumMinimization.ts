@@ -1,6 +1,7 @@
-const absoluteValuesSumMinimization = (a: number[]): number  =>{
+const absoluteValuesSumMinimization = (a: number[]): number => {
 	const isEven = a.length % 2 === 0; /*?*/
 	const half = Math.floor(a.length / 2); /*?*/
+
 	return isEven ? a[half - 1] : a[half];
 };
 
