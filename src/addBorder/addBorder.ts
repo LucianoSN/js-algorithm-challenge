@@ -1,5 +1,5 @@
 /*
- * Option 1 - My First Resolution
+ * Option 1 - My First Solution
  */
 
 const addBorderMy = (picture: string[]): string[] => {
@@ -15,7 +15,7 @@ const addBorderMy = (picture: string[]): string[] => {
 console.log(addBorderMy(['abc', 'ded'])); /*?.*/
 
 /*
- * Option 2 - Instructor Resolution
+ * Option 2 - Instructor Solution
  */
 
 const addBorderInstructor = (picture: string[]): any => {
