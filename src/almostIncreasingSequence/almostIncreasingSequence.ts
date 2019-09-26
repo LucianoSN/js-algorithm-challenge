@@ -56,15 +56,12 @@ console.log(almostIncreasingInstructor([1, 3, 2, 4, 5, 2, 4])); /*?.*/
 const almostFunctional = (sequence: number[]): boolean => {
 	let increase = true;
 
-	let canBe = value => value > sequence[0];
-	let bits = sequence.map(x => canBe(x)).slice(1); /*?*/
-
-	bits.forEach(x => {
-		if (!x) {
-			increase = x;
-			return;
-		}
-	});
+	sequence
+		.slice(1)
+		.map(x => x > sequence[0])
+		.forEach(x => {
+			if (!x) increase = x;
+		});
 
 	return increase;
 };
