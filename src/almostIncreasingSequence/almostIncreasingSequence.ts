@@ -46,7 +46,7 @@ console.log(almostIncreasingInstructor([1, 3, 2])); /*?.*/
 console.log(almostIncreasingInstructor([1, 2])); /*?.*/
 console.log(almostIncreasingInstructor([1, 3])); /*?.*/
 
-// The instructor code has a bug, the result above must be "True", but the result is "False"
+// The instructor code has a bug, the result bellow must be "True", but is "False"
 console.log(almostIncreasingInstructor([1, 3, 2, 4, 5, 2, 4])); /*?.*/
 
 /*
