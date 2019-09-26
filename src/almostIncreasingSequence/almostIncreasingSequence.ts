@@ -5,9 +5,8 @@
 const almostIncreasingMy = (sequence: number[]): boolean => {
 	let increase = true;
 
-	sequence.forEach((element, index, array) => {
-		increase = element > array[0]; /*?*/
-		if (!increase) return;
+	sequence.slice(1).forEach(element => {
+		if (element <= sequence[0]) increase = false;
 	});
 
 	return increase;
@@ -17,6 +16,8 @@ console.log(almostIncreasingMy([1, 3, 2, 1])); /*?.*/
 console.log(almostIncreasingMy([1, 3, 2])); /*?.*/
 console.log(almostIncreasingMy([1, 2])); /*?.*/
 console.log(almostIncreasingMy([1, 3])); /*?.*/
+
+console.log(almostIncreasingMy([1, 3, 2, 4, 5, 2, 4])); /*?.*/
 
 /*
  * Option 2 - Instructor Solution
@@ -44,6 +45,9 @@ console.log(almostIncreasingInstructor([1, 3, 2, 1])); /*?.*/
 console.log(almostIncreasingInstructor([1, 3, 2])); /*?.*/
 console.log(almostIncreasingInstructor([1, 2])); /*?.*/
 console.log(almostIncreasingInstructor([1, 3])); /*?.*/
+
+// The instructor code has a bug, the result above must be "True", but the result is "False"
+console.log(almostIncreasingInstructor([1, 3, 2, 4, 5, 2, 4])); /*?.*/
 
 /*
  * Option 3 - Functional Approach
