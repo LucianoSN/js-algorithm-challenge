@@ -58,9 +58,9 @@ console.log(subSequenceInstructor('bxz'));
 const subSequenceFunctional = (sequence: string): boolean => {
 	let isValid = true;
 
-	const chars = sequence.split('').map(x => x.charCodeAt(0)) /*?*/;
-	chars.forEach((value, i) => {
-		if (value >= chars[i + 1]) isValid = false;
+	const codes = sequence.split('').map(x => x.charCodeAt(0)) /*?*/;
+	codes.forEach((value, i) => {
+		if (value >= codes[i + 1]) isValid = false;
 	});
 
 	return isValid;
