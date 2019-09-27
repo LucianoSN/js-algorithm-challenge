@@ -1,13 +1,11 @@
-import { log } from 'util';
-
-const alphabetic = 'abcdefghijklmnopqrstuvwxyz';
-
 /*
  * Option 1 - My First Solution
  */
 
 const subSequenceMy = (sequence: string): boolean => {
 	let isValid = true;
+
+	const alphabetic = 'abcdefghijklmnopqrstuvwxyz';
 
 	const index = sequence.split('').map(x => alphabetic.indexOf(x)); /*?*/
 
