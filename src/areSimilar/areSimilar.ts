@@ -54,11 +54,10 @@ console.log(areSimilarInstructor([1, 2, 2], [2, 1, 1]));
 const areSimilarFunctional = (a: number[], b: number[]): boolean => {
 	const isValid = ([x, y]) => {
 		let equal = true;
-		const xSorted = x.sort();
 		const ySorted = y.sort();
 
-		xSorted.forEach((element, index) => {
-			if (xSorted[index] !== ySorted[index]) equal = false;
+		x.sort().forEach((element, index) => {
+			if (element !== ySorted[index]) equal = false;
 		});
 
 		return equal;
