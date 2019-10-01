@@ -3,29 +3,16 @@
  */
 
 const arrayMaxMy = (input: number[], k: number): number => {
-	// const sums = input
-	// 	.map((element, index) => element + input[index + 1])
-	// 	.filter(x => {
-	// 		if (!isNaN(x)) return x;
-	// 	}); /*?*/
+	let sums: number[] = [];
 
-	const sums2 = input
-		.map((element, index) => {
-			let value = 0;
+	for (let i in input) {
+		let current = parseInt(i);
+		let value = input[current] + input[current + 1]; /*?*/
 
-			if (index % k === 0) {
-				value = element + input[index + 1]; /*?*/
-			} else {
-				value = element + input[index * k]; /*?*/
-			}
+		if (!isNaN(value)) sums.push(value);
+	}
 
-			return value; /*?*/
-		})
-		.filter(x => {
-			if (!isNaN(x)) return x;
-		}); /*?*/
-
-	return Math.max(...sums2);
+	return Math.max(...sums);
 };
-
+// There is an error, the K variable is not used
 console.log(arrayMaxMy([2, 3, 5, 1, 6], 2));
