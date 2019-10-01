@@ -38,7 +38,7 @@ const arrayConversionInstructor = (inputArray: number[]): number => {
 			}
 		}
 
-		return sumProducts;
+		return sumProducts; /*?*/
 	};
 
 	let isOdd = true;
