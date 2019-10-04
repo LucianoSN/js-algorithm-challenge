@@ -50,6 +50,31 @@ console.log(arrayMaxInstructor([2, 3, 5, 1, 6], 2));
  * Option 3 - Functional Approach
  */
 
-const arrayMaxFunctional = (input: number[], k: number): number => {};
+const arrayMaxFunctional = (input: number[], k: number): number => {
+	const lessThenK = (index: number) => index < k;
+	const notUndefined = (value) => value !== undefined;
+
+	let sum = input.filter((value, index) => lessThenK(index)).reduce((total, x) => total + x); /*?*/
+	let max = sum;
+
+	input.forEach((value, index, array) => {
+		const x = array[index - k];
+
+		if (notUndefined(x)) {
+			sum -= x; /*?*/
+			sum += array[index]; /*?*/
+
+			console.log(sum, max);
+		}
+
+		if (sum > max) {
+			max = sum;
+		}
+
+	});
+
+
+	return max
+};
 
 console.log(arrayMaxFunctional([2, 3, 5, 1, 6], 2));
